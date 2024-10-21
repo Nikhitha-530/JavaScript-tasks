@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>some content</h1>
+    <h1>some content</h1>
+    <h1>some content</h1>
+
+    <div id="el1">some info</div> 
+   <div id="el2">some info</div><br><br>
+
+   <button onclick="fun()">click on</button>
+   <div class="nikki"></div>
+   <div class="nikki"></div>
+    
+    <script>
+       
+        //   styles for id
+        let div=document.getElementById("el1");
+         div.style.background="blue";
+         div.style.color="red";
+         console.log("div");
+        
+
+        // create element by id
+        var a=document.createElement("h1");
+         a.innerText="new element";
+        a.style.color="white";
+        a.style.background="red";
+        console.log(a);
+        document.body.appendChild(a);
+        var firstdiv=document.querySelectorAll("h1");
+        firstdiv[1].appendChild(a);
+        console.log(firstdiv);
+        
+
+        // creating list
+       var ul=document.createElement("ul");
+        var li1=document.createElement("li");
+       var li2=document.createElement("li");
+        var li3=document.createElement("li");
+        li1.innerHTML="html";
+        li1.style.color="red";
+        li2.innerHTML="css";
+        li3.innerHTML="javascript";
+        ul.append(li1,li2,li3)
+        document.body.appendChild(ul);
+
+
+        function fun(){
+            var div=document.querySelector(".nikki");
+            div.innerText="some info";
+             div.style.color="red";
+             div[1].style.background="blue";
+              console.log(div);
+             
+             }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+</body>
+</html>
