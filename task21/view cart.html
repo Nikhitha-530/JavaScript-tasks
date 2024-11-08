@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cart</title>
+</head>
+<body>
+  <h1>Your Cart</h1>
+  <div id="cartItems"></div>
+  <script>
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+    let newcart = document.getElementById("cartItems");
+ 
+    if (cart.length === 0) {
+      newcart.innerText = "Your cart is empty.";
+    } else {
+      cart.forEach((item) => {
+        let items = document.createElement("div");
+        items.style.border = "1px solid black";
+        items.style.margin = "10px";
+        items.style.padding = "10px";
+
+        let title = document.createElement("h3");
+        let price = document.createElement("div");
+        let category = document.createElement("div");
+        let image = document.createElement("img");
+          
+        title.innerText = item.title;
+        price.innerText = `Price: $${item.price}`;
+        category.innerText = `Category: ${item.category}`;
+
+        image.src = item.image;
+        image.style.width = "100px";
+        image.style.height = "100px";
+
+        items.append(image, title, price, category);
+        newcart.appendChild(items); 
+        items.addEventListener("click", () => {
+          items.style.display = "none";
+        });
+    
+      });
+    }
+  </script>
+</body>
+</html>

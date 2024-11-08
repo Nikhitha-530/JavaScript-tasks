@@ -1,47 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-  </head>
-  <body>
+</head>
+<body>
     <script>
-      // Given an array of numbers, use the map method to create a new array where each number is doubled.
+        // Given an array of numbers, use the reduce method to calculate the sum of all the numbers.
+        let arr=[2,8,6,54]
+         newarr= arr.reduce((acc,val)=>{
+            return acc+val
+         },0)
+         console.log(newarr);
 
-      let arr = [1, 2, 3, 4, 5];
-      var newarr = arr.map((val) => {
-        return val * 2;
-      });
-      console.log(newarr);
+        //  Given an array of numbers, use the reduce method to calculate the average.
+        let arr1=[3,4,7,8]
+        newarr1=arr1.reduce((acc,val)=>{
+            return acc+val/arr1.length
+        },0)
+        
+        console.log(newarr1);
 
-      // Given an array of numbers, use the map method to create a new array where each element is the square of the original element.
+        // Filter adults
+        people=[
+            {name:"john",age:17},{name:"jane",age:22},{name:"jim",age:15},{name:"jack",age:19}
+        ];
+        arr=people.filter((val)=>{
+            return val.age>=18
+        })
+        console.log(arr); 
 
-      let arr1 = [2, 9, 6, 5, 40];
-      var newarr1 = arr1.map((val) => {
-        return val * val;
-      });
-      console.log(newarr1);
-
-      // Given an array of numbers, use the filter method to create a new array that contains only the odd numbers.
-
-      let arr2 = [30, 4, 65, 23, 6, 7, 3, 2];
-      var newarr2 = arr2.filter((val) => {
-        return val % 2 == 1;
-      });
-      console.log(newarr2);
-
-      // Given an array of words, use the filter method to create
-      //  a new array that contains only words with 5 or fewer characters.
-      let arr3 = ["nikki", "navyamala", "sravani", "teja"];
-      var newarr3 = arr3.filter((val) => {
-        return val.length >= 5;
-      });
-      console.log(newarr3);
-
-      // creat cards using map method from fake store data
-
-      let data = [
+        // creating cards
+        let data = [
         {
           id: 1,
           title: "Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops",
@@ -166,22 +157,12 @@
         var childa = document.createElement("div");
         var childb = document.createElement("div");
         var childc = document.createElement("div");
-        var button=document.createElement("button")
-        
-
-        child.append(childa, childb, childc,button);
+        child.append(childa, childb, childc);
         maindiv.appendChild(child);
-        button.addEventListener("click",()=>{
-          //  maindiv.removeChild(child);
-          child.style.display="none";
-        });
 
         childa.innerText = "id :" + val.id;
         childb.innerText = "price :" + val.price;
         childc.innerText = "category :" + val.category;
-        button.innerText="remove";
-        button.style.margin="30px";
-        
         child.style.border = "1px solid red";
         child.style.padding = "20px";
         child.style.margin = "20px";
@@ -193,6 +174,14 @@
 
         document.body.appendChild(maindiv);
       });
+
+        
+
+        
+
+         
+        
+
     </script>
-  </body>
+</body>
 </html>
